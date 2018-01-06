@@ -46,5 +46,18 @@ public class FullFillmentService {
 		}
 
 	}
+	
+	public List<FullfillmentData>   getAllFullFillments() {
+		 
+		List<FullfillmentData> fullfillmentDataList = new ArrayList<>();
+		
+		  for (FullfillmentEntity fullfillmentEntity :  fullfillmentRepository.findAll()) {
+			  FullfillmentData fullfillmentData = new FullfillmentData();
+			  BeanUtils.copyProperties(fullfillmentEntity, fullfillmentData);
+			  fullfillmentDataList.add(fullfillmentData);
+			  
+		}
+		 return fullfillmentDataList;
+	}
 
 }

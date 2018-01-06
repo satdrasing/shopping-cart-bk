@@ -11,14 +11,17 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.springframework.stereotype.Component;
-
 import com.satendra.shopping.rest.model.FullfillmentData;
 
 @Path("/")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public interface FullfillmentResource {
+	
+	@GET
+	@Path("/fullfillment/")
+	public Response getAllFillfill();
+	
 	
 	@GET
 	@Path("/fullfillment/{orderId}")

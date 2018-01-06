@@ -39,4 +39,10 @@ public class FullfillmentImpl  implements FullfillmentResource{
 		
 	}
 
+	@Override
+	public Response getAllFillfill() {
+		List<FullfillmentData> fullfillmentData =fullfillmentService.getAllFullFillments();
+		return Response.status(Status.OK).entity(fullfillmentData).build();
+	}
+
 }
