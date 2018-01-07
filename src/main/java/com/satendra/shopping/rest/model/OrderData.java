@@ -122,8 +122,9 @@ public class OrderData implements Comparable<OrderData>{
 
 	@Override
 	public int compareTo(OrderData o) {
-		
-		return o.date.compareTo(this.date);
+		 if (this.getDate() == null || o.getDate()== null)
+		      return 0;
+		return o.getDate().compareTo(this.getDate());
 	}
 	
 	
