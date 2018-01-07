@@ -27,14 +27,7 @@ public class FullfillmentImpl  implements FullfillmentResource{
 	@Override
 	public Response saveFillfillments(List<FullfillmentData> fullfillmentDataList) {
 		
-		System.err.println(fullfillmentDataList);
 		fullfillmentService.saveAllFullRecord(fullfillmentDataList);
-		
-		for (FullfillmentData fullfillmentData : fullfillmentDataList) {
-			System.err.println(fullfillmentData.getOrderId());
-			System.err.println(fullfillmentData.getProductName());
-		}
-		
 		return Response.status(Status.OK).entity(fullfillmentDataList).build();
 		
 	}
